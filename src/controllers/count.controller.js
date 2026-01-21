@@ -3,6 +3,7 @@ import { successResponse } from "../utils/response.util.js";
 
 const getContactStats = async (req, res, next) => {
   try {
+    console.log("req object:" , req.ip)
     const stats = await getContactStatsFromDB();
 
     return successResponse(res, {

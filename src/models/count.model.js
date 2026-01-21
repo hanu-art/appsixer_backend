@@ -1,4 +1,4 @@
-import { pool } from "../config/db.config";
+import { pool } from "../config/db.config.js";
 const getContactStatsFromDB = async () => {
   const query = `
     SELECT

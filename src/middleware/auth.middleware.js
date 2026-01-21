@@ -2,8 +2,14 @@ import { verifyToken } from '../utils/jwt.util.js';
 
 const authMiddleware = async (req, res, next) => {
   try {
+
+
+    console.log("Cookies:", req.cookies);
+
+
     const token = req.cookies?.token;
  
+   
 
     if (!token) {
       return res.status(401).json({ success: false, message: 'Unauthorized' });

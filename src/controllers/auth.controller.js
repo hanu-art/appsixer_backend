@@ -65,8 +65,8 @@ const login = async (req, res, next) => {
 
     res.cookie('token', token, {
       httpOnly: true,
-      secure: true,
-      sameSite: 'none',
+      secure: false,
+      sameSite: 'lax',
       maxAge,
       path: '/',
     });
@@ -89,10 +89,12 @@ const login = async (req, res, next) => {
  */
 const logout = async (req, res, next) => {
   try {
+
+    console.log(req)
     res.clearCookie('token', {
       httpOnly: true,
-      secure: true,
-      sameSite: 'none',
+      secure:false,
+      sameSite: 'lax',
       path: '/',
     });
 

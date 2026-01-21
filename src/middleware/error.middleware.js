@@ -39,8 +39,9 @@ const errorMiddleware = (err, req, res, next) => {
 	}
 
 	if (!isProd && err && err.stack) {
-		errors = [{ stack: err.stack }];
-	}
+  console.error(err.stack);
+}
+
 
 	return errorResponse(res, { statusCode, message, errors });
 };
